@@ -93,11 +93,30 @@
       box-shadow: 0 8px 24px rgba(72, 185, 255, 0.18);
     }
 
-    .platform {
-      font-size: 0.9rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+    .platform-icon {
+      width: 24px;
+      height: 24px;
+      color: #dbe8ff;
+      opacity: 0.95;
+    }
+
+    .platform-icon svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      fill: currentColor;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .handle {
@@ -128,6 +147,49 @@
       color: #d5ffe9;
     }
 
+    .preview {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 10px;
+      align-items: center;
+      margin-top: 2px;
+      padding: 8px;
+      border-radius: 10px;
+      border: 1px solid #3a4762;
+      background: rgba(14, 20, 31, 0.65);
+    }
+
+    .preview-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #253149;
+      border: 1px solid #3a4762;
+    }
+
+    .preview-meta {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .preview-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8fa2c9;
+    }
+
+    .preview-title {
+      font-size: 0.86rem;
+      color: #d9e4ff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     .note {
       margin-top: 24px;
       font-size: 0.86rem;
@@ -150,18 +212,21 @@
       <h2>Next Week News</h2>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@nextweeknews" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nextweeknews">
-          <span class="platform">TikTok</span>
+          <span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span>
           <span class="handle">@nextweeknews</span>
+          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
         </a>
         <a class="account" href="https://www.instagram.com/nextweeknews" target="_blank" rel="noopener" data-platform="instagram" data-handle="nextweeknews">
-          <span class="platform">Instagram</span>
+          <span class="platform-icon" data-icon aria-label="Instagram"><span class="sr-only">Instagram</span></span>
           <span class="handle">@nextweeknews</span>
+          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
         </a>
         <a class="account" href="https://www.youtube.com/@NextWeekNews" target="_blank" rel="noopener" data-platform="youtube" data-handle="NextWeekNews">
-          <span class="platform">YouTube</span>
+          <span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span>
           <span class="handle">@NextWeekNews</span>
+          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live subscribers…</span></span>
         </a>
       </div>
@@ -171,13 +236,15 @@
       <h2>NWN Aidan</h2>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@nwnaidan" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nwnaidan">
-          <span class="platform">TikTok</span>
+          <span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span>
           <span class="handle">@nwnaidan</span>
+          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
         </a>
         <a class="account" href="https://www.youtube.com/@nwnaidan" target="_blank" rel="noopener" data-platform="youtube" data-handle="nwnaidan">
-          <span class="platform">YouTube</span>
+          <span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span>
           <span class="handle">@nwnaidan</span>
+          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live subscribers…</span></span>
         </a>
       </div>
@@ -187,13 +254,15 @@
       <h2>Personal</h2>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@aidan.kellaher" target="_blank" rel="noopener" data-platform="tiktok" data-handle="aidan.kellaher">
-          <span class="platform">TikTok</span>
+          <span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span>
           <span class="handle">@aidan.kellaher</span>
+          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
         </a>
         <a class="account" href="https://www.instagram.com/aidankellaher" target="_blank" rel="noopener" data-platform="instagram" data-handle="aidankellaher">
-          <span class="platform">Instagram</span>
+          <span class="platform-icon" data-icon aria-label="Instagram"><span class="sr-only">Instagram</span></span>
           <span class="handle">@aidankellaher</span>
+          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
         </a>
       </div>
@@ -204,6 +273,18 @@
 
   <script>
     const cards = [...document.querySelectorAll('.account')];
+
+    const icons = {
+      tiktok: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.35V2h-3.2v13.23a2.89 2.89 0 1 1-1.98-2.75V9.24a6.1 6.1 0 1 0 5.18 6.04V8.56a8.02 8.02 0 0 0 4.8 1.6V6.98c-.35 0-.7-.1-1.03-.29Z"/></svg>',
+      instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm-.2 1.8a3.75 3.75 0 0 0-3.75 3.75v8.9a3.75 3.75 0 0 0 3.75 3.75h8.9a3.75 3.75 0 0 0 3.75-3.75v-8.9a3.75 3.75 0 0 0-3.75-3.75h-8.9Zm9.35 1.55a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z"/></svg>',
+      youtube: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.58 7.19a2.98 2.98 0 0 0-2.1-2.1C17.62 4.6 12 4.6 12 4.6s-5.62 0-7.48.5a2.98 2.98 0 0 0-2.1 2.1c-.5 1.86-.5 4.81-.5 4.81s0 2.95.5 4.81a2.98 2.98 0 0 0 2.1 2.1c1.86.5 7.48.5 7.48.5s5.62 0 7.48-.5a2.98 2.98 0 0 0 2.1-2.1c.5-1.86.5-4.81.5-4.81s0-2.95-.5-4.81ZM10.2 15.2V8.8L15.8 12l-5.6 3.2Z"/></svg>',
+    };
+
+    cards.forEach((card) => {
+      const iconTarget = card.querySelector('[data-icon]');
+      const icon = icons[card.dataset.platform];
+      if (icon && iconTarget) iconTarget.insertAdjacentHTML('afterbegin', icon);
+    });
 
     const toNum = (v) => {
       if (!v) return NaN;
@@ -240,8 +321,28 @@
       return Number.isFinite(parsed) ? parsed : null;
     };
 
+    const decode = (text) => {
+      const el = document.createElement('textarea');
+      el.innerHTML = text;
+      return el.value;
+    };
+
+    const getMeta = (html, property) => {
+      const metaRegex = new RegExp(`<meta[^>]+(?:property|name)=["']${property}["'][^>]*content=["']([^"']+)["'][^>]*>`, 'i');
+      const reverseMetaRegex = new RegExp(`<meta[^>]+content=["']([^"']+)["'][^>]*(?:property|name)=["']${property}["'][^>]*>`, 'i');
+      const hit = html.match(metaRegex) || html.match(reverseMetaRegex);
+      return hit ? decode(hit[1]) : null;
+    };
+
+    const getRecentVideoPreview = (html) => ({
+      title: getMeta(html, 'og:title') || getMeta(html, 'twitter:title') || 'Recent video preview unavailable',
+      image: getMeta(html, 'og:image') || getMeta(html, 'twitter:image'),
+    });
+
     const updateCard = async (card) => {
       const countEl = card.querySelector('.count');
+      const previewTitle = card.querySelector('.preview-title');
+      const previewThumb = card.querySelector('.preview-thumb');
       const platform = card.dataset.platform;
       const url = card.href;
 
@@ -252,9 +353,18 @@
         const label = platform === 'youtube' ? 'subscribers' : 'followers';
         countEl.textContent = `${pretty(count)} ${label}`;
         countEl.classList.remove('loading');
+
+        const preview = getRecentVideoPreview(html);
+        previewTitle.textContent = preview.title;
+        previewTitle.classList.remove('loading');
+        if (preview.image) {
+          previewThumb.src = preview.image;
+        }
       } catch {
         countEl.textContent = 'Live count unavailable';
         countEl.classList.remove('loading');
+        previewTitle.textContent = 'Preview unavailable';
+        previewTitle.classList.remove('loading');
       }
     };
 
