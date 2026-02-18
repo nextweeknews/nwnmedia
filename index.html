@@ -234,17 +234,23 @@
     .account[data-platform="tiktok"] .preview-wrap,
     .account[data-platform="instagram"] .preview-wrap {
       aspect-ratio: 16 / 9;
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
+      display: grid;
+      place-items: center;
     }
 
     .account[data-platform="tiktok"] .preview-wrap iframe,
     .account[data-platform="instagram"] .preview-wrap iframe {
-      width: auto;
-      max-width: 100%;
+      width: calc(100% * 81 / 256);
       height: 100%;
       aspect-ratio: 9 / 16;
+      max-width: none;
+    }
+
+    .section-description {
+      margin: -6px 0 14px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 450;
     }
   </style>
 </head>
@@ -267,6 +273,7 @@
 
     <section>
       <h2><img class="section-avatar" src="/NWNLogo.JPG" alt="Next Week News avatar" />Next Week News</h2>
+      <p class="section-description">Scripted comedy shorts, presenting news reports from one week in the future</p>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@nextweeknews" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nextweeknews">
           <span class="account-head"><span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span><span class="handle">@nextweeknews</span></span>
@@ -294,6 +301,7 @@
 
     <section>
       <h2><img class="section-avatar" src="/AidanPFP.png" alt="NWN Aidan avatar" />NWN Aidan</h2>
+      <p class="section-description">I'm a top-ranked Nintendo Switch Sports Golf player</p>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@nwnaidan" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nwnaidan">
           <span class="account-head"><span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span><span class="handle">@nwnaidan</span></span>
@@ -314,6 +322,7 @@
 
     <section>
       <h2><img class="section-avatar" src="/AidanPFP.png" alt="Personal avatar" />Personal</h2>
+      <p class="section-description">Miscellaneous and comedic sketches and observations</p>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@aidan.kellaher" target="_blank" rel="noopener" data-platform="tiktok" data-handle="aidan.kellaher">
           <span class="account-head"><span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span><span class="handle">@aidan.kellaher</span></span>
