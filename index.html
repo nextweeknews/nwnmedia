@@ -65,22 +65,22 @@
       padding: 10px 18px;
       border-radius: 999px;
       text-decoration: none;
-      background: #0FAFFF;
-      color: #04152c;
+      background: transparent;
+      color: #0FAFFF;
       font-weight: 700;
       border: 1px solid #0FAFFF;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     }
 
     .linkedin-cta:hover {
       transform: translateY(-1px);
+      background-color: rgba(15, 175, 255, 0.1);
       box-shadow: 0 10px 24px rgba(15, 175, 255, 0.26);
     }
 
-    .linkedin-cta svg {
+    .linkedin-cta img {
       width: 18px;
       height: 18px;
-      fill: currentColor;
       display: block;
     }
 
@@ -300,7 +300,7 @@
       <img class="title-logo" src="/nwnmedia.svg" alt="NWN Media" />
       <p class="subhead">is a social brand created by Aidan Kellaher.</p>
       <a class="linkedin-cta" href="https://www.linkedin.com/in/aidankellaher/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.48 2.48 0 1 0 5 8.46a2.48 2.48 0 0 0-.02-4.96ZM2.75 9.88h4.5V21h-4.5V9.88Zm7.32 0h4.31v1.52h.06c.6-1.14 2.06-2.34 4.24-2.34 4.54 0 5.38 2.99 5.38 6.88V21h-4.5v-4.48c0-1.07-.02-2.44-1.49-2.44-1.49 0-1.72 1.16-1.72 2.36V21h-4.5V9.88Z"/></svg>
+        <img src="/linkedin.svg" alt="" aria-hidden="true" />
         <span>Connect with me</span>
       </a>
       <div class="headline-metrics" aria-label="NWN Media totals">
