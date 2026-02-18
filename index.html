@@ -59,6 +59,29 @@
       font-size: clamp(0.95rem, 2vw, 1.08rem);
     }
 
+    .headline-metrics {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .headline-metric-value {
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 800;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .headline-metric-label {
+      margin-top: 4px;
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      font-weight: 400;
+      color: #8895b2;
+    }
+
     section {
       margin-top: 36px;
       padding: 22px;
@@ -88,8 +111,9 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 240px));
       gap: 14px;
+      justify-content: flex-start;
     }
 
     .account {
@@ -188,6 +212,16 @@
     <header>
       <img class="title-logo" src="/nwnmedia.svg" alt="NWN Media" />
       <p class="subhead">is a social brand created by Aidan Kellaher.</p>
+      <div class="headline-metrics" aria-label="NWN Media totals">
+        <div>
+          <div class="headline-metric-value">650,000+</div>
+          <div class="headline-metric-label">total followers</div>
+        </div>
+        <div>
+          <div class="headline-metric-value">150,000,000+</div>
+          <div class="headline-metric-label">total views</div>
+        </div>
+      </div>
     </header>
 
     <section>
@@ -195,15 +229,15 @@
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@nextweeknews" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nextweeknews">
           <span class="account-head"><span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span><span class="handle">@nextweeknews</span></span>
-          <span class="count-wrap"><span class="count loading">Loading live count…</span><span class="count-label">followers</span></span>
+          <span class="count-wrap"><span class="count">371,000</span><span class="count-label">followers</span></span>
         </a>
         <a class="account" href="https://www.instagram.com/nextweeknews" target="_blank" rel="noopener" data-platform="instagram" data-handle="nextweeknews">
           <span class="account-head"><span class="platform-icon" data-icon aria-label="Instagram"><span class="sr-only">Instagram</span></span><span class="handle">@nextweeknews</span></span>
-          <span class="count-wrap"><span class="count loading">Loading live count…</span><span class="count-label">followers</span></span>
+          <span class="count-wrap"><span class="count">249,000</span><span class="count-label">followers</span></span>
         </a>
         <a class="account" href="https://www.youtube.com/@NextWeekNews" target="_blank" rel="noopener" data-platform="youtube" data-handle="NextWeekNews">
           <span class="account-head"><span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span><span class="handle">@NextWeekNews</span></span>
-          <span class="count-wrap"><span class="count loading">Loading live count…</span><span class="count-label">subscribers</span></span>
+          <span class="count-wrap"><span class="count">3,000</span><span class="count-label">subscribers</span></span>
         </a>
       </div>
     </section>
@@ -213,11 +247,11 @@
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@nwnaidan" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nwnaidan">
           <span class="account-head"><span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span><span class="handle">@nwnaidan</span></span>
-          <span class="count-wrap"><span class="count loading">Loading live count…</span><span class="count-label">followers</span></span>
+          <span class="count-wrap"><span class="count">10,000</span><span class="count-label">followers</span></span>
         </a>
         <a class="account" href="https://www.youtube.com/@nwnaidan" target="_blank" rel="noopener" data-platform="youtube" data-handle="nwnaidan">
           <span class="account-head"><span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span><span class="handle">@nwnaidan</span></span>
-          <span class="count-wrap"><span class="count loading">Loading live count…</span><span class="count-label">subscribers</span></span>
+          <span class="count-wrap"><span class="count">3,000</span><span class="count-label">subscribers</span></span>
         </a>
       </div>
     </section>
@@ -227,12 +261,12 @@
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@aidan.kellaher" target="_blank" rel="noopener" data-platform="tiktok" data-handle="aidan.kellaher">
           <span class="account-head"><span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span><span class="handle">@aidan.kellaher</span></span>
-          <span class="count-wrap"><span class="count loading">Loading live count…</span><span class="count-label">followers</span></span>
+          <span class="count-wrap"><span class="count">46,000</span><span class="count-label">followers</span></span>
         </a>
       </div>
     </section>
 
-    <p class="note">Follower/subscriber data uses publicly available page metadata and may be limited by platform privacy or anti-bot protections.</p>
+    <p class="note">Follower/subscriber totals are manually maintained and periodically updated.</p>
   </main>
 
   <script>
@@ -250,77 +284,6 @@
       if (icon && iconTarget) iconTarget.insertAdjacentHTML('afterbegin', icon);
     });
 
-    const toNum = (v) => {
-      if (!v) return NaN;
-      const cleaned = v.replace(/,/g, '').trim().toUpperCase();
-      const unit = cleaned.slice(-1);
-      const base = parseFloat(cleaned);
-      if (Number.isNaN(base)) return NaN;
-      if (unit === 'K') return Math.round(base * 1_000);
-      if (unit === 'M') return Math.round(base * 1_000_000);
-      if (unit === 'B') return Math.round(base * 1_000_000_000);
-      return Math.round(base);
-    };
-
-    const pretty = (n) => new Intl.NumberFormat().format(n);
-
-    const patterns = {
-      tiktok: /(\d[\d,.]*\s*[KMB]?)\s*(followers?)/i,
-      youtube: /(\d[\d,.]*\s*[KMB]?)\s*(subscribers?)/i,
-    };
-
-    const fetchThroughProxy = async (url) => {
-      const proxy = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
-      const res = await fetch(proxy);
-      if (!res.ok) throw new Error(`Fetch failed (${res.status})`);
-      return res.text();
-    };
-
-    const getInstagramCount = (html) => {
-      const jsonKeys = [
-        /"edge_followed_by"\s*:\s*\{\s*"count"\s*:\s*(\d+)/i,
-        /"followers_count"\s*:\s*(\d+)/i,
-        /"followed_by"\s*:\s*\{\s*"count"\s*:\s*(\d+)/i,
-      ];
-      for (const expr of jsonKeys) {
-        const match = html.match(expr);
-        if (match) return Number(match[1]);
-      }
-
-      const plain = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
-      const fallback = plain.match(/(\d[\d,.]*\s*[KMB]?)\s*(followers?)/i);
-      if (!fallback) return null;
-      const parsed = toNum(fallback[1]);
-      return Number.isFinite(parsed) ? parsed : null;
-    };
-
-    const getCount = (html, platform) => {
-      if (platform === 'instagram') return getInstagramCount(html);
-      const plain = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
-      const hit = plain.match(patterns[platform]);
-      if (!hit) return null;
-      const parsed = toNum(hit[1]);
-      return Number.isFinite(parsed) ? parsed : null;
-    };
-
-    const updateCard = async (card) => {
-      const countEl = card.querySelector('.count');
-      const platform = card.dataset.platform;
-      const url = card.href;
-
-      try {
-        const html = await fetchThroughProxy(url);
-        const count = getCount(html, platform);
-        if (count === null) throw new Error('No count found');
-        countEl.textContent = pretty(count);
-        countEl.classList.remove('loading');
-      } catch {
-        countEl.textContent = 'Live count unavailable';
-        countEl.classList.remove('loading');
-      }
-    };
-
-    cards.forEach(updateCard);
   </script>
 </body>
 </html>
