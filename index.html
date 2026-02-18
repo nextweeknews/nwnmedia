@@ -236,7 +236,6 @@
 
     .loading { color: #b6c3de; }
 
-    /* === PREVIEW AREA (16:9 window) === */
     .preview-wrap {
       margin-top: 2px;
       border-radius: 10px;
@@ -245,27 +244,32 @@
       background: #0d1320;
       aspect-ratio: 16 / 9;
 
-      /* Center children so vertical videos sit nicely with pillarboxes */
       display: grid;
       place-items: center;
     }
 
-    /* Default: horizontal embeds fill the 16:9 window */
-    .preview-wrap iframe {
+   .account:not([data-platform="tiktok"]):not([data-platform="instagram"]) .preview-wrap > iframe {
       width: 100%;
       height: 100%;
+      border: 0;
+      display: block;
+      background: #000;   
+   }
+
+    .account[data-platform="tiktok"] .vertical-embed > iframe,
+    .account[data-platform="instagram"] .vertical-embed > iframe {
+      width: 100% !important;
+      height: 100% !important;
       border: 0;
       display: block;
       background: #000;
     }
 
-    /* Optional polish: clean pillarbox background for vertical embeds */
     .account[data-platform="tiktok"] .preview-wrap,
     .account[data-platform="instagram"] .preview-wrap {
       background: #000;
     }
 
-    /* ✅ 9:16 wrapper constrained by the 16:9 frame’s height */
     .vertical-embed {
       height: 100%;
       aspect-ratio: 9 / 16;
@@ -277,7 +281,6 @@
       place-items: center;
     }
 
-    /* iframe fills the 9:16 box */
     .vertical-embed iframe {
       width: 100%;
       height: 100%;
