@@ -1,1 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NWN Media</title>
+  <style>
+    :root {
+      --bg: #0c0f15;
+      --panel: #121722;
+      --panel-soft: #1a2130;
+      --text: #f3f6ff;
+      --muted: #a3aec9;
+      --accent: #6fe3ff;
+      --accent-strong: #48b9ff;
+      --ok: #4bffb0;
+      --border: #293349;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(72, 185, 255, 0.16), transparent 35%),
+        radial-gradient(circle at top left, rgba(111, 227, 255, 0.13), transparent 45%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    main {
+      width: min(1080px, 92vw);
+      margin: 0 auto;
+      padding: 64px 0 80px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      letter-spacing: 0.02em;
+    }
+
+    .subhead {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: clamp(0.95rem, 2vw, 1.08rem);
+    }
+
+    section {
+      margin-top: 36px;
+      padding: 22px;
+      background: linear-gradient(165deg, rgba(18, 23, 34, 0.96), rgba(17, 22, 31, 0.88));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.35rem;
+      color: var(--accent);
+      letter-spacing: 0.01em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .account {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      padding: 14px;
+      border-radius: 12px;
+      background: var(--panel-soft);
+      border: 1px solid #33405a;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .account:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-strong);
+      box-shadow: 0 8px 24px rgba(72, 185, 255, 0.18);
+    }
+
+    .platform {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .handle {
+      font-size: 1.12rem;
+      font-weight: 650;
+      overflow-wrap: anywhere;
+    }
+
+    .count-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      font-weight: 600;
+      color: var(--ok);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--ok);
+      box-shadow: 0 0 10px rgba(75, 255, 176, 0.8);
+    }
+
+    .count {
+      font-size: 1rem;
+      color: #d5ffe9;
+    }
+
+    .note {
+      margin-top: 24px;
+      font-size: 0.86rem;
+      color: #8895b2;
+    }
+
+    .loading {
+      color: #b6c3de;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>NWN Media</h1>
+      <p class="subhead">is a social brand created by Aidan Kellaher.</p>
+    </header>
+
+    <section>
+      <h2>Next Week News</h2>
+      <div class="grid">
+        <a class="account" href="https://www.tiktok.com/@nextweeknews" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nextweeknews">
+          <span class="platform">TikTok</span>
+          <span class="handle">@nextweeknews</span>
+          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
+        </a>
+        <a class="account" href="https://www.instagram.com/nextweeknews" target="_blank" rel="noopener" data-platform="instagram" data-handle="nextweeknews">
+          <span class="platform">Instagram</span>
+          <span class="handle">@nextweeknews</span>
+          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
+        </a>
+        <a class="account" href="https://www.youtube.com/@NextWeekNews" target="_blank" rel="noopener" data-platform="youtube" data-handle="NextWeekNews">
+          <span class="platform">YouTube</span>
+          <span class="handle">@NextWeekNews</span>
+          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live subscribers…</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>NWN Aidan</h2>
+      <div class="grid">
+        <a class="account" href="https://www.tiktok.com/@nwnaidan" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nwnaidan">
+          <span class="platform">TikTok</span>
+          <span class="handle">@nwnaidan</span>
+          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
+        </a>
+        <a class="account" href="https://www.youtube.com/@nwnaidan" target="_blank" rel="noopener" data-platform="youtube" data-handle="nwnaidan">
+          <span class="platform">YouTube</span>
+          <span class="handle">@nwnaidan</span>
+          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live subscribers…</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Personal</h2>
+      <div class="grid">
+        <a class="account" href="https://www.tiktok.com/@aidan.kellaher" target="_blank" rel="noopener" data-platform="tiktok" data-handle="aidan.kellaher">
+          <span class="platform">TikTok</span>
+          <span class="handle">@aidan.kellaher</span>
+          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
+        </a>
+        <a class="account" href="https://www.instagram.com/aidankellaher" target="_blank" rel="noopener" data-platform="instagram" data-handle="aidankellaher">
+          <span class="platform">Instagram</span>
+          <span class="handle">@aidankellaher</span>
+          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
+        </a>
+      </div>
+    </section>
+
+    <p class="note">Follower/subscriber preview uses publicly available page metadata and may be limited by platform privacy or anti-bot protections.</p>
+  </main>
+
+  <script>
+    const cards = [...document.querySelectorAll('.account')];
+
+    const toNum = (v) => {
+      if (!v) return NaN;
+      const cleaned = v.replace(/,/g, '').trim().toUpperCase();
+      const unit = cleaned.slice(-1);
+      const base = parseFloat(cleaned);
+      if (Number.isNaN(base)) return NaN;
+      if (unit === 'K') return Math.round(base * 1_000);
+      if (unit === 'M') return Math.round(base * 1_000_000);
+      if (unit === 'B') return Math.round(base * 1_000_000_000);
+      return Math.round(base);
+    };
+
+    const pretty = (n) => new Intl.NumberFormat().format(n);
+
+    const patterns = {
+      tiktok: /(\d[\d,.]*\s*[KMB]?)\s*(followers?)/i,
+      instagram: /(\d[\d,.]*\s*[KMB]?)\s*(followers?)/i,
+      youtube: /(\d[\d,.]*\s*[KMB]?)\s*(subscribers?)/i,
+    };
+
+    const fetchThroughProxy = async (url) => {
+      const proxy = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+      const res = await fetch(proxy);
+      if (!res.ok) throw new Error(`Fetch failed (${res.status})`);
+      return res.text();
+    };
+
+    const getCount = (html, platform) => {
+      const plain = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+      const hit = plain.match(patterns[platform]);
+      if (!hit) return null;
+      const parsed = toNum(hit[1]);
+      return Number.isFinite(parsed) ? parsed : null;
+    };
+
+    const updateCard = async (card) => {
+      const countEl = card.querySelector('.count');
+      const platform = card.dataset.platform;
+      const url = card.href;
+
+      try {
+        const html = await fetchThroughProxy(url);
+        const count = getCount(html, platform);
+        if (count === null) throw new Error('No count found');
+        const label = platform === 'youtube' ? 'subscribers' : 'followers';
+        countEl.textContent = `${pretty(count)} ${label}`;
+        countEl.classList.remove('loading');
+      } catch {
+        countEl.textContent = 'Live count unavailable';
+        countEl.classList.remove('loading');
+      }
+    };
+
+    cards.forEach(updateCard);
+  </script>
+</body>
+</html>
