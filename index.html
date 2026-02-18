@@ -218,11 +218,12 @@
       background: #0d1320;
       aspect-ratio: 16 / 9;
 
-      /* Center children (so vertical videos "contain" nicely) */
+      /* Center children so vertical videos sit nicely with pillarboxes */
       display: grid;
       place-items: center;
     }
 
+    /* Default: horizontal embeds fill the 16:9 window */
     .preview-wrap iframe {
       width: 100%;
       height: 100%;
@@ -231,19 +232,21 @@
       background: #000;
     }
 
-    /* === OPTIONAL POLISH: clean pillarbox for vertical embeds === */
+    /* OPTIONAL POLISH: clean pillarbox for vertical embeds */
     .account[data-platform="tiktok"] .preview-wrap,
     .account[data-platform="instagram"] .preview-wrap {
-      background: #000; /* clean letterbox/pillarbox */
+      background: #000;
     }
 
-    /* === FIX: CONTAIN 9:16 inside 16:9 (no cropping) ===
-       Scale factor = (9/16) / (16/9) = 81/256 = 0.31640625
-    */
+    /* ✅ FIX: vertical embeds should fill HEIGHT, with width derived from 9:16 */
     .account[data-platform="tiktok"] .preview-wrap iframe,
     .account[data-platform="instagram"] .preview-wrap iframe {
-      transform-origin: center center;
-      transform: scale(0.31640625);
+      height: 100%;
+      width: auto;          /* key: don't force 100% width */
+      aspect-ratio: 9 / 16; /* keeps vertical proportions */
+      max-width: 100%;
+      max-height: 100%;
+      transform: none;      /* ensure no scaling remains */
     }
 
     .section-description {
