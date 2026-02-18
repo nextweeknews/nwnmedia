@@ -19,9 +19,7 @@
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -209,11 +207,9 @@
       color: #8895b2;
     }
 
-    .loading {
-      color: #b6c3de;
-    }
+    .loading { color: #b6c3de; }
 
-
+    /* === PREVIEW AREA (16:9 window) === */
     .preview-wrap {
       margin-top: 2px;
       border-radius: 10px;
@@ -221,6 +217,10 @@
       border: 1px solid #3a4762;
       background: #0d1320;
       aspect-ratio: 16 / 9;
+
+      /* Center children (so vertical videos "contain" nicely) */
+      display: grid;
+      place-items: center;
     }
 
     .preview-wrap iframe {
@@ -231,19 +231,19 @@
       background: #000;
     }
 
+    /* === OPTIONAL POLISH: clean pillarbox for vertical embeds === */
     .account[data-platform="tiktok"] .preview-wrap,
     .account[data-platform="instagram"] .preview-wrap {
-      aspect-ratio: 16 / 9;
-      display: grid;
-      place-items: center;
+      background: #000; /* clean letterbox/pillarbox */
     }
 
+    /* === FIX: CONTAIN 9:16 inside 16:9 (no cropping) ===
+       Scale factor = (9/16) / (16/9) = 81/256 = 0.31640625
+    */
     .account[data-platform="tiktok"] .preview-wrap iframe,
     .account[data-platform="instagram"] .preview-wrap iframe {
-      width: calc(100% * 81 / 256);
-      height: 100%;
-      aspect-ratio: 9 / 16;
-      max-width: none;
+      transform-origin: center center;
+      transform: scale(0.31640625);
     }
 
     .section-description {
@@ -276,24 +276,42 @@
       <p class="section-description">Scripted comedy shorts, presenting news reports from one week in the future</p>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@nextweeknews" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nextweeknews">
-          <span class="account-head"><span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span><span class="handle">@nextweeknews</span></span>
+          <span class="account-head">
+            <span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span>
+            <span class="handle">@nextweeknews</span>
+          </span>
           <span class="count-wrap"><span class="count">371,000</span><span class="count-label">followers</span></span>
           <div class="preview-wrap" aria-label="TikTok preview video">
             <iframe src="https://www.tiktok.com/embed/v2/7427635200726912302" title="Next Week News TikTok preview" loading="lazy" allowfullscreen></iframe>
           </div>
         </a>
+
         <a class="account" href="https://www.instagram.com/nextweeknews" target="_blank" rel="noopener" data-platform="instagram" data-handle="nextweeknews">
-          <span class="account-head"><span class="platform-icon" data-icon aria-label="Instagram"><span class="sr-only">Instagram</span></span><span class="handle">@nextweeknews</span></span>
+          <span class="account-head">
+            <span class="platform-icon" data-icon aria-label="Instagram"><span class="sr-only">Instagram</span></span>
+            <span class="handle">@nextweeknews</span>
+          </span>
           <span class="count-wrap"><span class="count">249,000</span><span class="count-label">followers</span></span>
           <div class="preview-wrap" aria-label="Instagram preview video">
             <iframe src="https://www.instagram.com/reel/C-yaO_bvqdE/embed" title="Next Week News Instagram preview" loading="lazy" allowfullscreen></iframe>
           </div>
         </a>
+
         <a class="account" href="https://www.youtube.com/@NextWeekNews" target="_blank" rel="noopener" data-platform="youtube" data-handle="NextWeekNews">
-          <span class="account-head"><span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span><span class="handle">@NextWeekNews</span></span>
+          <span class="account-head">
+            <span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span>
+            <span class="handle">@NextWeekNews</span>
+          </span>
           <span class="count-wrap"><span class="count">3,000</span><span class="count-label">subscribers</span></span>
           <div class="preview-wrap" aria-label="YouTube preview video">
-            <iframe src="https://www.youtube.com/embed/WcAV4Pg2veA" title="Next Week News YouTube preview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              src="https://www.youtube.com/embed/WcAV4Pg2veA"
+              title="Next Week News YouTube preview"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
         </a>
       </div>
@@ -304,17 +322,31 @@
       <p class="section-description">I'm a top-ranked Nintendo Switch Sports Golf player</p>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@nwnaidan" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nwnaidan">
-          <span class="account-head"><span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span><span class="handle">@nwnaidan</span></span>
+          <span class="account-head">
+            <span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span>
+            <span class="handle">@nwnaidan</span>
+          </span>
           <span class="count-wrap"><span class="count">10,000</span><span class="count-label">followers</span></span>
           <div class="preview-wrap" aria-label="TikTok preview video">
             <iframe src="https://www.tiktok.com/embed/v2/7537377735241485581" title="NWN Aidan TikTok preview" loading="lazy" allowfullscreen></iframe>
           </div>
         </a>
+
         <a class="account" href="https://www.youtube.com/@nwnaidan" target="_blank" rel="noopener" data-platform="youtube" data-handle="nwnaidan">
-          <span class="account-head"><span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span><span class="handle">@nwnaidan</span></span>
+          <span class="account-head">
+            <span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span>
+            <span class="handle">@nwnaidan</span>
+          </span>
           <span class="count-wrap"><span class="count">3,000</span><span class="count-label">subscribers</span></span>
           <div class="preview-wrap" aria-label="YouTube preview video">
-            <iframe src="https://www.youtube.com/embed/WT7xvQpRFZQ" title="NWN Aidan YouTube preview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              src="https://www.youtube.com/embed/WT7xvQpRFZQ"
+              title="NWN Aidan YouTube preview"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
         </a>
       </div>
@@ -325,7 +357,10 @@
       <p class="section-description">Miscellaneous and comedic sketches and observations</p>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@aidan.kellaher" target="_blank" rel="noopener" data-platform="tiktok" data-handle="aidan.kellaher">
-          <span class="account-head"><span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span><span class="handle">@aidan.kellaher</span></span>
+          <span class="account-head">
+            <span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span>
+            <span class="handle">@aidan.kellaher</span>
+          </span>
           <span class="count-wrap"><span class="count">46,000</span><span class="count-label">followers</span></span>
           <div class="preview-wrap" aria-label="TikTok preview video">
             <iframe src="https://www.tiktok.com/embed/v2/7165254460401323306" title="Personal TikTok preview" loading="lazy" allowfullscreen></iframe>
@@ -349,7 +384,6 @@
       const icon = icons[card.dataset.platform];
       if (icon && iconTarget) iconTarget.insertAdjacentHTML('afterbegin', icon);
     });
-
   </script>
 </body>
 </html>
