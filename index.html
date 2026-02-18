@@ -95,7 +95,7 @@
     .account {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
       color: inherit;
       padding: 14px;
@@ -109,6 +109,12 @@
       transform: translateY(-2px);
       border-color: var(--accent-strong);
       box-shadow: 0 8px 24px rgba(72, 185, 255, 0.18);
+    }
+
+    .account-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .platform-icon {
@@ -144,25 +150,26 @@
     }
 
     .count-wrap {
-      display: inline-flex;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
       margin-top: auto;
-      font-weight: 600;
-      color: var(--ok);
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--ok);
-      box-shadow: 0 0 10px rgba(75, 255, 176, 0.8);
+      text-align: center;
+      width: 100%;
     }
 
     .count {
-      font-size: 1rem;
-      color: #d5ffe9;
+      font-size: 1.2rem;
+      color: #ffffff;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .count-label {
+      font-size: 0.85rem;
+      color: #8895b2;
+      font-weight: 400;
     }
 
     .note {
@@ -184,54 +191,47 @@
     </header>
 
     <section>
-      <h2><img class="section-avatar" src="/NWNLogo.webp" alt="Next Week News avatar" />Next Week News</h2>
+      <h2><img class="section-avatar" src="NWNLogo.webp" alt="Next Week News avatar" />Next Week News</h2>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@nextweeknews" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nextweeknews">
-          <span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span>
-          <span class="handle">@nextweeknews</span>
-          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
+          <span class="account-head"><span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span><span class="handle">@nextweeknews</span></span>
+          <span class="count-wrap"><span class="count loading">Loading live count…</span><span class="count-label">followers</span></span>
         </a>
         <a class="account" href="https://www.instagram.com/nextweeknews" target="_blank" rel="noopener" data-platform="instagram" data-handle="nextweeknews">
-          <span class="platform-icon" data-icon aria-label="Instagram"><span class="sr-only">Instagram</span></span>
-          <span class="handle">@nextweeknews</span>
-          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
+          <span class="account-head"><span class="platform-icon" data-icon aria-label="Instagram"><span class="sr-only">Instagram</span></span><span class="handle">@nextweeknews</span></span>
+          <span class="count-wrap"><span class="count loading">Loading live count…</span><span class="count-label">followers</span></span>
         </a>
         <a class="account" href="https://www.youtube.com/@NextWeekNews" target="_blank" rel="noopener" data-platform="youtube" data-handle="NextWeekNews">
-          <span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span>
-          <span class="handle">@NextWeekNews</span>
-          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live subscribers…</span></span>
+          <span class="account-head"><span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span><span class="handle">@NextWeekNews</span></span>
+          <span class="count-wrap"><span class="count loading">Loading live count…</span><span class="count-label">subscribers</span></span>
         </a>
       </div>
     </section>
 
     <section>
-      <h2><img class="section-avatar" src="/AidanPFP.png" alt="NWN Aidan avatar" />NWN Aidan</h2>
+      <h2><img class="section-avatar" src="AidanPFP.png" alt="NWN Aidan avatar" />NWN Aidan</h2>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@nwnaidan" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nwnaidan">
-          <span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span>
-          <span class="handle">@nwnaidan</span>
-          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
+          <span class="account-head"><span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span><span class="handle">@nwnaidan</span></span>
+          <span class="count-wrap"><span class="count loading">Loading live count…</span><span class="count-label">followers</span></span>
         </a>
         <a class="account" href="https://www.youtube.com/@nwnaidan" target="_blank" rel="noopener" data-platform="youtube" data-handle="nwnaidan">
-          <span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span>
-          <span class="handle">@nwnaidan</span>
-          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live subscribers…</span></span>
+          <span class="account-head"><span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span><span class="handle">@nwnaidan</span></span>
+          <span class="count-wrap"><span class="count loading">Loading live count…</span><span class="count-label">subscribers</span></span>
         </a>
       </div>
     </section>
 
     <section>
-      <h2><img class="section-avatar" src="/AidanPFP.png" alt="Personal avatar" />Personal</h2>
+      <h2><img class="section-avatar" src="AidanPFP.png" alt="Personal avatar" />Personal</h2>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@aidan.kellaher" target="_blank" rel="noopener" data-platform="tiktok" data-handle="aidan.kellaher">
-          <span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span>
-          <span class="handle">@aidan.kellaher</span>
-          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
+          <span class="account-head"><span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span><span class="handle">@aidan.kellaher</span></span>
+          <span class="count-wrap"><span class="count loading">Loading live count…</span><span class="count-label">followers</span></span>
         </a>
         <a class="account" href="https://www.instagram.com/aidankellaher" target="_blank" rel="noopener" data-platform="instagram" data-handle="aidankellaher">
-          <span class="platform-icon" data-icon aria-label="Instagram"><span class="sr-only">Instagram</span></span>
-          <span class="handle">@aidankellaher</span>
-          <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
+          <span class="account-head"><span class="platform-icon" data-icon aria-label="Instagram"><span class="sr-only">Instagram</span></span><span class="handle">@aidankellaher</span></span>
+          <span class="count-wrap"><span class="count loading">Loading live count…</span><span class="count-label">followers</span></span>
         </a>
       </div>
     </section>
@@ -270,7 +270,6 @@
 
     const patterns = {
       tiktok: /(\d[\d,.]*\s*[KMB]?)\s*(followers?)/i,
-      instagram: /(\d[\d,.]*\s*[KMB]?)\s*(followers?)/i,
       youtube: /(\d[\d,.]*\s*[KMB]?)\s*(subscribers?)/i,
     };
 
@@ -281,7 +280,26 @@
       return res.text();
     };
 
+    const getInstagramCount = (html) => {
+      const jsonKeys = [
+        /"edge_followed_by"\s*:\s*\{\s*"count"\s*:\s*(\d+)/i,
+        /"followers_count"\s*:\s*(\d+)/i,
+        /"followed_by"\s*:\s*\{\s*"count"\s*:\s*(\d+)/i,
+      ];
+      for (const expr of jsonKeys) {
+        const match = html.match(expr);
+        if (match) return Number(match[1]);
+      }
+
+      const plain = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+      const fallback = plain.match(/(\d[\d,.]*\s*[KMB]?)\s*(followers?)/i);
+      if (!fallback) return null;
+      const parsed = toNum(fallback[1]);
+      return Number.isFinite(parsed) ? parsed : null;
+    };
+
     const getCount = (html, platform) => {
+      if (platform === 'instagram') return getInstagramCount(html);
       const plain = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
       const hit = plain.match(patterns[platform]);
       if (!hit) return null;
@@ -298,8 +316,7 @@
         const html = await fetchThroughProxy(url);
         const count = getCount(html, platform);
         if (count === null) throw new Error('No count found');
-        const label = platform === 'youtube' ? 'subscribers' : 'followers';
-        countEl.textContent = `${pretty(count)} ${label}`;
+        countEl.textContent = pretty(count);
         countEl.classList.remove('loading');
       } catch {
         countEl.textContent = 'Live count unavailable';
