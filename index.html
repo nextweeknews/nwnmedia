@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NWN Media</title>
+  <link rel="icon" type="image/svg+xml" href="/nwnmedia.svg" />
   <style>
     :root {
       --bg: #0c0f15;
@@ -40,10 +41,16 @@
       padding: 64px 0 80px;
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-      letter-spacing: 0.02em;
+    header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title-logo {
+      width: min(420px, 78vw);
+      height: auto;
     }
 
     .subhead {
@@ -66,6 +73,17 @@
       font-size: 1.35rem;
       color: var(--accent);
       letter-spacing: 0.01em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #3a4762;
     }
 
     .grid {
@@ -147,49 +165,6 @@
       color: #d5ffe9;
     }
 
-    .preview {
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      gap: 10px;
-      align-items: center;
-      margin-top: 2px;
-      padding: 8px;
-      border-radius: 10px;
-      border: 1px solid #3a4762;
-      background: rgba(14, 20, 31, 0.65);
-    }
-
-    .preview-thumb {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border-radius: 8px;
-      background: #253149;
-      border: 1px solid #3a4762;
-    }
-
-    .preview-meta {
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .preview-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #8fa2c9;
-    }
-
-    .preview-title {
-      font-size: 0.86rem;
-      color: #d9e4ff;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
     .note {
       margin-top: 24px;
       font-size: 0.86rem;
@@ -204,71 +179,64 @@
 <body>
   <main>
     <header>
-      <h1>NWN Media</h1>
+      <img class="title-logo" src="/nwnmedia.svg" alt="NWN Media" />
       <p class="subhead">is a social brand created by Aidan Kellaher.</p>
     </header>
 
     <section>
-      <h2>Next Week News</h2>
+      <h2><img class="section-avatar" src="/NWNLogo.webp" alt="Next Week News avatar" />Next Week News</h2>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@nextweeknews" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nextweeknews">
           <span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span>
           <span class="handle">@nextweeknews</span>
-          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
         </a>
         <a class="account" href="https://www.instagram.com/nextweeknews" target="_blank" rel="noopener" data-platform="instagram" data-handle="nextweeknews">
           <span class="platform-icon" data-icon aria-label="Instagram"><span class="sr-only">Instagram</span></span>
           <span class="handle">@nextweeknews</span>
-          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
         </a>
         <a class="account" href="https://www.youtube.com/@NextWeekNews" target="_blank" rel="noopener" data-platform="youtube" data-handle="NextWeekNews">
           <span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span>
           <span class="handle">@NextWeekNews</span>
-          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live subscribers…</span></span>
         </a>
       </div>
     </section>
 
     <section>
-      <h2>NWN Aidan</h2>
+      <h2><img class="section-avatar" src="/AidanPFP.png" alt="NWN Aidan avatar" />NWN Aidan</h2>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@nwnaidan" target="_blank" rel="noopener" data-platform="tiktok" data-handle="nwnaidan">
           <span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span>
           <span class="handle">@nwnaidan</span>
-          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
         </a>
         <a class="account" href="https://www.youtube.com/@nwnaidan" target="_blank" rel="noopener" data-platform="youtube" data-handle="nwnaidan">
           <span class="platform-icon" data-icon aria-label="YouTube"><span class="sr-only">YouTube</span></span>
           <span class="handle">@nwnaidan</span>
-          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live subscribers…</span></span>
         </a>
       </div>
     </section>
 
     <section>
-      <h2>Personal</h2>
+      <h2><img class="section-avatar" src="/AidanPFP.png" alt="Personal avatar" />Personal</h2>
       <div class="grid">
         <a class="account" href="https://www.tiktok.com/@aidan.kellaher" target="_blank" rel="noopener" data-platform="tiktok" data-handle="aidan.kellaher">
           <span class="platform-icon" data-icon aria-label="TikTok"><span class="sr-only">TikTok</span></span>
           <span class="handle">@aidan.kellaher</span>
-          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
         </a>
         <a class="account" href="https://www.instagram.com/aidankellaher" target="_blank" rel="noopener" data-platform="instagram" data-handle="aidankellaher">
           <span class="platform-icon" data-icon aria-label="Instagram"><span class="sr-only">Instagram</span></span>
           <span class="handle">@aidankellaher</span>
-          <span class="preview"><img class="preview-thumb" alt="Recent video preview" loading="lazy" /><span class="preview-meta"><span class="preview-label">Recent video</span><span class="preview-title loading">Loading preview…</span></span></span>
           <span class="count-wrap"><span class="status-dot"></span><span class="count loading">Loading live followers…</span></span>
         </a>
       </div>
     </section>
 
-    <p class="note">Follower/subscriber preview uses publicly available page metadata and may be limited by platform privacy or anti-bot protections.</p>
+    <p class="note">Follower/subscriber data uses publicly available page metadata and may be limited by platform privacy or anti-bot protections.</p>
   </main>
 
   <script>
@@ -321,28 +289,8 @@
       return Number.isFinite(parsed) ? parsed : null;
     };
 
-    const decode = (text) => {
-      const el = document.createElement('textarea');
-      el.innerHTML = text;
-      return el.value;
-    };
-
-    const getMeta = (html, property) => {
-      const metaRegex = new RegExp(`<meta[^>]+(?:property|name)=["']${property}["'][^>]*content=["']([^"']+)["'][^>]*>`, 'i');
-      const reverseMetaRegex = new RegExp(`<meta[^>]+content=["']([^"']+)["'][^>]*(?:property|name)=["']${property}["'][^>]*>`, 'i');
-      const hit = html.match(metaRegex) || html.match(reverseMetaRegex);
-      return hit ? decode(hit[1]) : null;
-    };
-
-    const getRecentVideoPreview = (html) => ({
-      title: getMeta(html, 'og:title') || getMeta(html, 'twitter:title') || 'Recent video preview unavailable',
-      image: getMeta(html, 'og:image') || getMeta(html, 'twitter:image'),
-    });
-
     const updateCard = async (card) => {
       const countEl = card.querySelector('.count');
-      const previewTitle = card.querySelector('.preview-title');
-      const previewThumb = card.querySelector('.preview-thumb');
       const platform = card.dataset.platform;
       const url = card.href;
 
@@ -353,18 +301,9 @@
         const label = platform === 'youtube' ? 'subscribers' : 'followers';
         countEl.textContent = `${pretty(count)} ${label}`;
         countEl.classList.remove('loading');
-
-        const preview = getRecentVideoPreview(html);
-        previewTitle.textContent = preview.title;
-        previewTitle.classList.remove('loading');
-        if (preview.image) {
-          previewThumb.src = preview.image;
-        }
       } catch {
         countEl.textContent = 'Live count unavailable';
         countEl.classList.remove('loading');
-        previewTitle.textContent = 'Preview unavailable';
-        previewTitle.classList.remove('loading');
       }
     };
 
